@@ -53,12 +53,12 @@ jobs:
 
       - run:
         name: install dependencies
-        command: |
+        command: /
           yarn
           gem install percy-cli
 
       - run:
           name: run visual test
-          command: |
+          command: /
             yarn build
             percy snapshot build
