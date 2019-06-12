@@ -30,7 +30,6 @@ jobs:
           name: install dependencies
           command: |
             yarn
-            yarn add percy-cli
 
       - save_cache:
           paths:
@@ -42,4 +41,24 @@ jobs:
           name: run all the tests
           command: /
             yarn test
+
+  visual:
+    docker:
+      - image: circleci/ruby:2.6.2-node-browsers
+
+    working_directory: ~/repo
+
+    steps:
+      -checkout
+
+      -run:
+        name: install dependencies
+        command: |
+          yarn
+          gem install percy-cli
+
+      -run:
+          name: run visual test
+          command: |
+            yarn build
             percy snapshot build
