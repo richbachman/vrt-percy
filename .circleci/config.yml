@@ -39,7 +39,7 @@ jobs:
       # run tests!
       - run:
           name: run all the tests
-          command: /
+          command: |
             yarn test
             yarn build
             npx percy snapshot build
