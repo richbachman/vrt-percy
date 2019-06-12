@@ -30,7 +30,7 @@ jobs:
           name: Run visual test
           command: |
             yarn build
-            percy snapshot build
+            percy snapshot public
 
 workflows:
   version: 2
