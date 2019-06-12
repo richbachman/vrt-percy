@@ -29,8 +29,8 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            yarn install
-            yarn install percy-cli
+            yarn
+            yarn add percy-cli
 
       - save_cache:
           paths:
