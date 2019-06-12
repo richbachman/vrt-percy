@@ -30,7 +30,7 @@ jobs:
           name: install dependencies
           command: |
             yarn install
-            gem install percy-cli
+            yarn install percy-cli
 
       - save_cache:
           paths:
@@ -38,4 +38,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run:
+          name: run all the tests
+          command: /
+            yarn test
+            percy snapshot build
