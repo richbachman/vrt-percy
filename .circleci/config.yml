@@ -25,13 +25,11 @@ jobs:
           name: Install dependencies
           command: |
             yarn install
-            yarn global add serve
             gem install percy-cli
       - run:
           name: Run visual test
           command: |
             yarn build
-            serve -s build
             percy snapshot build
 
 workflows:
