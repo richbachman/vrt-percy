@@ -30,6 +30,8 @@ jobs:
           name: Run visual test
           command: |
             yarn build
+            yarn global add serve
+            serve -s build
             percy snapshot build
 
 workflows:
